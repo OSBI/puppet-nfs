@@ -15,4 +15,10 @@ class nfs::server::debian inherits nfs::client::debian {
     pattern => "nfsd"
   }
 
+	file{
+		"/etc/default/nfs-server":
+		ensure=>present,
+		source=>"puppet:///modules/nfs/sshd_config",
+		notify      => Exec['reload_nfs_srv'],
+	}
 }
