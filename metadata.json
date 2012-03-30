@@ -8,12 +8,26 @@
   "summary": "",
   "version": "1.0",
   "checksums": {
-    "Modulefile": "fcfc54806f8ba512aaecb6f55eeed626",
+    "Modulefile": "47be69b5f033b3a0cb55e2cd19407ce9",
     "README": "e8442d10f33767157ee349e25e09be10",
+    "README.rst": "31e704df49fbfb426116aa8c2e8bf1f2",
+    "manifests/base.pp": "71bd997c316b12e01221017a9ffec05a",
+    "manifests/client.pp": "86bc99861ad7edf2a393d09d96618837",
+    "manifests/client/debian.pp": "1865e96f99e9f3df377d8e6612a663aa",
+    "manifests/client/redhat.pp": "3edc241aa68ce9d1191cf48e5cada1bb",
+    "manifests/export.pp": "e7675adc21fa0fed29e7bbaa2689289e",
     "manifests/init.pp": "09029c32dd915bba0e7efafcf1767624",
+    "manifests/mount.pp": "e2b79d18370d6c1b69d01ca3863450f9",
+    "manifests/server.pp": "d34704865f63d399c48806fd98a41ff5",
+    "manifests/server/debian.pp": "4801b31d2e8c40132973953e2ada2aac",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
     "tests/init.pp": "b37ec3579f38873920ccf208bec4cb32"
   },
-  "dependencies": []
+  "dependencies": [
+    {
+      "name": "Analytical Labs/common",
+      "versionRequirement": "\u003d\u003d1.0"
+    }
+  ]
 }

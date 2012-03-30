@@ -4,12 +4,12 @@ class nfs::client::debian inherits nfs::base {
     ensure => present,
   }
  
-  service { "nfs-common":
-    ensure    => running,
-    enable    => true,
-    hasstatus => true,
-    require   => Package["nfs-common"],
-  }
+  #service { "nfs-common":
+  #  ensure    => running,
+  #  enable    => true,
+  #  hasstatus => true,
+  #  require   => Package["nfs-common"],
+  #}
  
   service { "portmap":
     ensure    => running,
