@@ -18,7 +18,7 @@ class nfs::server::debian inherits nfs::client::debian {
 	file{
 		"/etc/default/nfs-server":
 		ensure=>present,
-		source=>"puppet:///modules/nfs/sshd_config",
+		source=>"puppet:///modules/nfs/nfs-common",
 		notify      => Exec['reload_nfs_srv'],	
 	}
 }
