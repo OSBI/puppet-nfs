@@ -1,5 +1,7 @@
 class nfs::server::debian inherits nfs::client::debian {
-  
+
+  include concat::setup
+
   package {"nfs-kernel-server":
     ensure => present,
   }
@@ -16,10 +18,11 @@ class nfs::server::debian inherits nfs::client::debian {
     require => Package["nfs-kernel-server"],
   }
 
-	file{
-		"/etc/default/nfs-server":
-		ensure=>present,
-		source=>"puppet:///modules/nfs/nfs-common",
-		notify      => Exec['reload_nfs_srv'],	
-	}
+  concat {'/etc/exports':
+    owner  => root,
+    group  => root,
+    mode   => '0644',
+    notify => Exec['reload_nfs_srv'],
+  }
+
 }
